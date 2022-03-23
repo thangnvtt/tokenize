@@ -8,3 +8,8 @@ settings:
 database:
   type: better-sqlite3
   database: './db.sqlite3'
+
+binance:
+  url: env(BINANCE_URL)
+  apiKey: env(BINANCE_API_KEY)
+  secret: env(BINANCE_SECRET)
