@@ -1,4 +1,5 @@
 import { Context, dependency, Get, HttpResponseOK } from '@foal/core'
+import { Response } from '../models/response'
 import { BinanceService } from '../services'
 export class ApiController {
 
@@ -14,11 +15,8 @@ export class ApiController {
   async getDepth(ctx: Context) {
     const { symbol, limit } = ctx.request.query
     const depth = await this.binanceService.getDepth(symbol, limit)
-    return new HttpResponseOK({
-      status: true,
-      message: '',
-      data: depth
-    })
+    const response = new Response<any>(depth, true)
+    return new HttpResponseOK(response)
   }
 
 }

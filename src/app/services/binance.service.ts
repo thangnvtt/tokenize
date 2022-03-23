@@ -3,7 +3,6 @@ import * as axios from 'axios'
 import { DepthDTO } from '../dto'
 
 const binanceUrl = Config.get('binance.url')
-
 const api = axios.default
 
 export class BinanceService {
