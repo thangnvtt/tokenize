@@ -1,4 +1,4 @@
-import { Context, dependency, Get, Hook, HttpResponseOK, ValidateBody, ValidatePathParam, ValidateQueryParam } from '@foal/core'
+import { Context, dependency, Get, Hook, HttpResponseOK, ValidateQueryParam } from '@foal/core'
 import { Response } from '../models'
 import { BinanceService } from '../services'
 
@@ -13,7 +13,7 @@ export class ApiController {
 
   @Get('/')
   index(ctx: Context) {
-    return new HttpResponseOK('Hello world!');
+    return new HttpResponseOK('Hello world!')
   }
 
   @Get('/depth')

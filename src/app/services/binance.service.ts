@@ -6,11 +6,8 @@ const binanceUrl = Config.get('binance.url')
 const api = axios.default
 
 export class BinanceService {
-
-    async getDepth(symbol: string, limit: number, maxAmountBid: number, maxSizeAsk: number): Promise<Depth> {
+    async getDepth(symbol: string, limit: number | undefined, maxAmountBid: number, maxSizeAsk: number): Promise<Depth> {
         const { data } = await api.get(`${binanceUrl}/api/v3/depth`, { params: { symbol, limit } })
-
-
         const limitDepth = this.getListWithLimitAmount(data, maxAmountBid, maxSizeAsk)
         return new Depth(limitDepth.bids, limitDepth.asks)
     }
