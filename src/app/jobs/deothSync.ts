@@ -14,7 +14,7 @@ export class DepthSync {
     binanceService: BinanceService
 
     async emitDepth(): Promise<void> {
-        scheduleJob('*/10 * * * * *', async () => {
+        scheduleJob('*/5 * * * * *', async () => {
             const depth = await this.binanceService.getDepth(SYMBOL, undefined, MAX_AMOUNT_BID, MAX_SIZE_ASK)
             this.wsServer.io.emit('depth_fetch', depth)
         })
