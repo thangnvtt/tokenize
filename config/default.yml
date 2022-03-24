@@ -10,4 +10,4 @@ database:
   database: './db.sqlite3'
 
 binance:
-  url: https://testnet.binance.vision
+  url: https://api.binance.com

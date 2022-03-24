@@ -1,5 +1,4 @@
-
-export class DepthDTO {
+export class Depth {
     bids: object[]
     asks: object[]
 
@@ -8,4 +7,3 @@ export class DepthDTO {
         this.asks = asks
     }
 }
-
