@@ -24,6 +24,7 @@
     "node": ">=10"
   },
   "dependencies": {
+    "@foal/cli": "^2.8.1",
     "@foal/core": "^2.0.0",
     "@foal/socket.io": "^2.8.1",
     "@foal/typeorm": "^2.0.0",
